@@ -5,9 +5,9 @@ The client side code for the web app is in `index.html` and `index.js`. The serv
 To run the app you need to have Leiningen 2.0 installed. Then simply run:
 
 ```
-$ git clone https://github.com/st3fan/clj-angularjs-recipes.git
+$ git clone https://github.com/esdrasbb/clj-angularjs-recipes.git
 $ cd clj-angularjs-recipes
-$ lein ring server-headless
+$ lein run
 ```
 
 The app should then be running at [http://localhost:3000](http://localhost:3000)

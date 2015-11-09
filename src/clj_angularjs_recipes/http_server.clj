@@ -1,13 +1,13 @@
 (ns clj-angularjs-recipes.http-server
   (:require [compojure.core :as compojure]
             [com.stuartsierra.component :as component]
-            [clj-angularjs-recipes.core :as core]
+            [clj-angularjs-recipes.handler :as handler]
             [ring.adapter.jetty :as jetty]))
 
 (compojure/defroutes app
-                     core/app)
+                     handler/app)
 
-(defrecord HTTPServer [port server]
+(defrecord Server [port server]
   component/Lifecycle
   (start [component]
     (println ";; Starting HTTP server")
@@ -18,6 +18,6 @@
     (.stop server)
     (assoc component :server nil)))
 
-(defn new-http-server
+(defn server
   [port]
-  (map->HTTPServer {:port port}))
+  (map->Server {:port port}))
